@@ -1,0 +1,26 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+env/
+
+# ---- BuddyKeyManager 本地数据（含加密凭证与密钥，严禁提交）----
+data/
+*.enc
+.key
+credentials-export.json
+
+# ---- 真实密钥/环境（只提交 .env.example）----
+.env
+
+# ---- OS / 编辑器 ----
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
