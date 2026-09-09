@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Buddy Key Manager Desktop</title><link rel="stylesheet" href="/static/style.css"></head>
+<body><main class="container">
+<header><div><h1>Buddy<span>Key</span>Manager</h1><div class="subtitle">Python 桌面 Web 客户端 · 本机运行</div></div><button id="refresh" class="secondary">刷新</button></header>
+<div id="message" class="message"></div>
+<div class="notice">仅用于管理你本人或已获授权的账号。登录过程在可见浏览器中完成；Token 属于敏感信息，会保存在本机加密存储中。</div>
+<section class="grid">
+<div class="card"><h2>OAuth 授权</h2><div class="form-row"><select id="region"><option value="cn">中国区</option><option value="global">国际区</option></select><button id="create-session">创建授权并打开浏览器</button></div><p class="muted">请在打开的浏览器页面中手动完成登录，服务会自动等待授权结果。</p><h3>授权会话</h3><div id="sessions"></div></div>
+<div class="card"><h2>接码平台</h2><div class="form-row"><select id="sms-provider"><option value="ejiema">ejiema（原版）</option></select><input id="sms-token" type="password" placeholder="Token（留空则保持原值）"><button id="save-sms">保存</button></div><p class="muted">状态：<strong id="sms-configured">未配置</strong>。已预留 Provider 接口，后续可添加其他平台。</p><div class="sms-grid"><input id="sms-keyword" type="text" placeholder="项目/关键字"><input id="sms-phone" type="text" placeholder="手机号"></div><div class="form-row" style="margin-top:10px"><button id="sms-phone-btn">取号</button><button id="sms-message-btn">取码</button><button id="sms-release" class="secondary">释放</button><button id="sms-block" class="danger">拉黑</button></div><textarea id="sms-message" placeholder="短信内容" readonly></textarea><input id="sms-code" type="text" placeholder="提取出的验证码" readonly style="margin-top:8px;width:100%"></div>
+<div class="card"><h2>Buddy2API 推送</h2><div class="form-row"><input id="push-url" type="text" placeholder="服务器地址，例如 http://127.0.0.1:8000"><input id="push-password" type="password" placeholder="管理密码"><button id="save-push">保存</button></div><p class="muted">状态：<strong id="push-configured">未配置</strong>。地址和密码会加密保存在本机。</p><div class="form-row"><button id="push-all">推送全部凭证</button></div></div>
+<div class="card full"><div class="form-row" style="justify-content:space-between"><h2 style="margin:0">凭证管理</h2><div class="form-row"><select id="health-filter"><option value="all">全部</option><option value="healthy">有效</option><option value="risk">风控</option><option value="dead">失效/异常</option><option value="unknown">未测</option></select><button id="ping-all">批量测活</button><button id="export" class="secondary">导出敏感 JSON</button></div></div><div id="credentials"></div></div>
+</section></main><script src="/static/app.js"></script></body></html>
