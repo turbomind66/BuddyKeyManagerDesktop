@@ -35,5 +35,5 @@ jobs:
           BKM_DATA_DIR: ./data-test
           BKM_OPEN_BROWSER: "false"
         run: |
-          pytest -q
+          python -m pytest
           rm -rf ./data-test
