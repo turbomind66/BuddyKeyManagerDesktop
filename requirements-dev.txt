@@ -1,0 +1,6 @@
+# 开发与测试依赖（叠加 requirements.txt 安装）
+-r requirements.txt
+
+pytest>=8,<9
+httpx>=0.27,<1
+ruff>=0.6,<1
