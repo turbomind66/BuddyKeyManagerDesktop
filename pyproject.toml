@@ -1,0 +1,21 @@
+[project]
+name = "buddy-key-manager-desktop"
+version = "1.0.0"
+description = "Desktop WorkBuddy/CodeBuddy credential manager (Python + FastAPI). Local OAuth authorize / credential health-check / balance / push to Buddy2API."
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi>=0.115,<1",
+    "uvicorn[standard]>=0.30,<1",
+    "httpx>=0.27,<1",
+    "pydantic>=2.7,<3",
+    "cryptography>=43,<45",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
